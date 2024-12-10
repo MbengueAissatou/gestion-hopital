@@ -8,6 +8,7 @@ use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\MedicamentController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\RendezvousController;
+use App\Http\Controllers\MaterielController;
 
 /*
 |----------------------------------------------------------------------
@@ -60,6 +61,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/personnels/{personnel}/edit', [PersonnelController::class, 'edit'])->name('personnels.edit');
     Route::put('/personnels/{personnel}', [PersonnelController::class, 'update'])->name('personnels.update');
     Route::delete('/personnels/{personnel}', [PersonnelController::class, 'destroy'])->name('personnels.destroy');
+
+    // Routes pour gérer les materiels
+   
+
+Route::get('/materiels', [MaterielController::class, 'index'])->name('materiels.index');
+Route::get('/materiels/create', [MaterielController::class, 'create'])->name('materiels.create');
+Route::post('/materiels', [MaterielController::class, 'store'])->name('materiels.store');
+Route::get('/materiels/{materiel}/edit', [MaterielController::class, 'edit'])->name('materiels.edit');
+Route::put('/materiels/{materiel}', [MaterielController::class, 'update'])->name('materiels.update');
+Route::delete('/materiels/{materiel}', [MaterielController::class, 'destroy'])->name('materiels.destroy');
 
     // Routes pour gérer les médicaments
     Route::resource('medicaments', MedicamentController::class);

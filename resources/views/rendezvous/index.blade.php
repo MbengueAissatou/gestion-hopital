@@ -17,7 +17,8 @@
                     <th>Patient</th>
                     <th>Médecin</th>
                     <th>Date Rendez-vous</th>
-                    <th>Motif</th>
+                    <th>Status</th>
+                    <th>Remarques</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -26,7 +27,7 @@
                     <td>{{ $Rendezvous->id }}</td>
                     <td>{{ $Rendezvous->patient->first_name }}</td>
                     <td>{{ $Rendezvous->medecin->nom }}</td>
-                    <td>{{ $Rendezvous->date_rendezvous }}</td>
+                    <td>{{ $Rendezvous->date_rendezvous}}</td>
                     <td>{{ $Rendezvous->status }}</td>
                     <td>{{ $Rendezvous->remarques }}</td>
                     <td>
